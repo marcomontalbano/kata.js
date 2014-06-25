@@ -1,0 +1,8 @@
+# System Files
+.DS_Store
+__MACOSX
+Thumbs.db
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
