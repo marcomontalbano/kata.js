@@ -6,3 +6,5 @@ Thumbs.db
 # Sublime
 *.sublime-project
 *.sublime-workspace
+
+wiki/
