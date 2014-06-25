@@ -8,8 +8,8 @@ It does not depend on any other JavaScript frameworks. It does not require a DOM
 > [Jasmine 2.0](http://jasmine.github.io/2.0/introduction.html)
 
 
-Kata
-----
+Katas
+-----
 
 A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.
 
