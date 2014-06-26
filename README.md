@@ -8,14 +8,32 @@ It does not depend on any other JavaScript frameworks. It does not require a DOM
 > [Jasmine 2.0](http://jasmine.github.io/2.0/introduction.html)
 
 
+jasmine-jquery
+--------------
+
+jasmine-jquery provides two extensions for Jasmine JavaScript Testing Framework:
+
+* a set of custom matchers for jQuery framework
+* an API for handling HTML, CSS, and JSON fixtures in your specs
+
+There are problems with the Cross domain policy under Chrome (and other browsers), to solve it you can run the script using a web server.
+
+My solution is **node.js**; install it and then execute:
+```sh
+node webserver.js
+```
+
+> [jasmine-jquery](https://github.com/velesin/jasmine-jquery)
+
+
 Katas
 -----
 
 A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.
 
-The term was probably first coined by [Dave Thomas][Dave Thomas], co-author of the book [The Pragmatic Programmer][The Pragmatic Programmer], in a bow to the Japanese concept of kata in the martial arts.
+The term was probably first coined by [Dave Thomas][], co-author of the book [The Pragmatic Programmer][], in a bow to the Japanese concept of kata in the martial arts.
 
-As of October 2011, Dave Thomas has published [21 different katas][21 different katas].
+As of October 2011, Dave Thomas has published [21 different katas][].
 
 > [wikipedia][Kata_(programming)]
 
