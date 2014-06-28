@@ -1,3 +1,15 @@
+Test driven development
+=======================
+
+Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle:
+
+* first the developer writes an (initially failing) automated test case that defines a desired improvement or new function.
+* then produces the minimum amount of code to pass that test.
+* finally refactors the new code to acceptable standards.
+
+> [wikipedia][Test driven_development]
+
+
 Javascript TDD with Jasmine
 ===========================
 
@@ -26,6 +38,8 @@ Wiki
 [Check out the wiki] for more information about the TDD with Jasmine.
 
 
+
+[Test driven_development]: http://en.wikipedia.org/wiki/Test-driven_development
 
 [Jasmine 2.0]: http://jasmine.github.io/2.0/introduction.html
 
