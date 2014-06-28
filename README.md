@@ -8,7 +8,6 @@ It does not depend on any other JavaScript frameworks. It does not require a DOM
 > [Jasmine 2.0][Jasmine 2.0]
 
 
-
 Katas
 =====
 
@@ -19,7 +18,6 @@ The term was probably first coined by [Dave Thomas][], co-author of the book [Th
 As of October 2011, Dave Thomas has published [21 different katas][].
 
 > [wikipedia][Kata_(programming)]
-
 
 
 Wiki
@@ -36,4 +34,4 @@ Wiki
 [21 different katas]: http://codekata.com/
 [Kata_(programming)]: http://en.wikipedia.org/wiki/Kata_(programming)
 
-[Check out the wiki]: https://bitbucket.org/mmontalbano/kata-jasmine/wiki
+[Check out the wiki]: kata-jasmine/wiki/browse/
