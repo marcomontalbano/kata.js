@@ -34,4 +34,4 @@ Wiki
 [21 different katas]: http://codekata.com/
 [Kata_(programming)]: http://en.wikipedia.org/wiki/Kata_(programming)
 
-[Check out the wiki]: kata-jasmine/wiki/browse/
+[Check out the wiki]: kata-jasmine/wiki
