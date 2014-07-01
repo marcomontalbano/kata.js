@@ -30,7 +30,7 @@ http.createServer( function(req, res)
 {
   var
     srvUrl    = url.parse( req.url ),
-    indexHtml = 'index.html',
+    indexHtml = 'SpecRunner.html',
     mimeTypes = {
       '.html' : 'text/html',      
       '.js'   : 'application/javascript', 
