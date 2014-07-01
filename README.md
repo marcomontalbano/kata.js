@@ -1,4 +1,4 @@
-Test driven development
+Test driven development 
 =======================
 
 Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle:
@@ -48,4 +48,4 @@ Wiki
 [21 different katas]: http://codekata.com/
 [Kata_(programming)]: http://en.wikipedia.org/wiki/Kata_(programming)
 
-[Check out the wiki]: kata-jasmine/wiki
+[Check out the wiki]: kata-jasmine/src/master/wiki/README.md
