@@ -43,7 +43,7 @@ Create a new file `FizzBuzz.js` inside the folder `src` of our project and add t
 ```
 #!html
 
-<script type="text/javascript" src="spec/FizzBuzz.js"></script>
+<script type="text/javascript" src="src/FizzBuzz.js"></script>
 ```
 
 The next step is writing some code that would cause the test to pass.

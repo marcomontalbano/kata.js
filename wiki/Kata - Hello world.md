@@ -45,7 +45,7 @@ Create a new file `HelloWorld.js` inside the folder `src` of our project and add
 ```
 #!html
 
-<script type="text/javascript" src="spec/HelloWorld.js"></script>
+<script type="text/javascript" src="src/HelloWorld.js"></script>
 ```
 
 The next step is writing some code that would cause the test to pass.
