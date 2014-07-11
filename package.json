@@ -1,0 +1,7 @@
+{
+    "name" : "kata-jasmine",
+    "version" : "1.0.0",
+    "devDependencies" : {
+        "grunt-contrib-jasmine": "*"
+    }
+}

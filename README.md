@@ -1,4 +1,6 @@
-Test driven development 
+[![Build Status](https://drone.io/bitbucket.org/mmontalbano/kata-jasmine/status.png)](https://drone.io/bitbucket.org/mmontalbano/kata-jasmine/latest)
+
+Test driven development
 =======================
 
 Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle:
@@ -32,6 +34,34 @@ As of October 2011, Dave Thomas has published [21 different katas][].
 > [wikipedia][Kata_(programming)]
 
 
+Setup
+=====
+
+There are two ways to execute tests.
+
+Output on HTML
+--------------
+
+Install [Node.js][Node.js] and then execute:
+
+```sh
+node webserver.js
+```
+
+Open you favorite browser and link to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
+Output on Console
+-----------------
+
+Install [Node.js][Node.js] and then execute:
+
+```sh
+npm install -g grunt-cli
+npm install
+grunt test
+```
+
+
 Wiki
 ====
 
@@ -48,4 +78,6 @@ Wiki
 [21 different katas]: http://codekata.com/
 [Kata_(programming)]: http://en.wikipedia.org/wiki/Kata_(programming)
 
-[Check out the wiki]: kata-jasmine/src/master/wiki/README.md
+[Node.js]: http://nodejs.org
+
+[Check out the wiki]: https://bitbucket.org/mmontalbano/kata-jasmine/src/master/wiki/README.md

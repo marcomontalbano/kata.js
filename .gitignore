@@ -8,3 +8,6 @@ Thumbs.db
 *.sublime-workspace
 
 #wiki/
+
+node_modules/
+output/
