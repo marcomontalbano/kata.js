@@ -94,7 +94,7 @@ In order to use drone.io with your Javascript projects you need to have an outpu
 
 ```sh
 npm install -g grunt-cli
-npm install
+npm install grunt-contrib-jasmine
 grunt test
 ```
 
