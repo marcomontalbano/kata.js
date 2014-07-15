@@ -53,11 +53,15 @@ Open you favorite browser and link to [http://127.0.0.1:8000/](http://127.0.0.1:
 Output on Console
 -----------------
 
-Install [Node.js][Node.js] and then execute:
+Grunt and Grunt plugins are installed and managed via npm, the [Node.js][Node.js] package manager.
+
+In order to get started, you'll want to install Grunt's command line interface (CLI) globally.
+
+You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
 ```sh
 npm install -g grunt-cli
-npm install
+npm install grunt-contrib-jasmine
 grunt test
 ```
 

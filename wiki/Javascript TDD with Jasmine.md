@@ -34,23 +34,11 @@ Now you can run your tests connecting to [http://127.0.0.1:8000/](http://127.0.0
 output: Console vs HTML
 -----------------------
 
-By default Jasmine prints the output on a browser using the `SpecRunner.html`.
+By default Jasmine prints the output on the browser using the `SpecRunner.html`.
 
 If you want to use the console you can install a [Grunt][Grunt] plugin called "[grunt-contrib-jasmine][grunt-contrib-jasmine]".
 
-Basically you need to install [Node.js][Node.js] and then create a new file `package.json` like this:
-
-```json
-{
-  "name" : "project-name",
-  "version" : "1.0.0",
-  "devDependencies" : {
-    "grunt-contrib-jasmine": "*"
-  }
-}
-```
-
-and a file `Gruntfile.js` like this:
+Basically you need to install [Node.js][Node.js] and then create a new file `Gruntfile.js` like this:
 
 ```js
 module.exports = function(grunt)
@@ -81,7 +69,7 @@ install the plugin and all dependencies:
 
 ```sh
 npm install -g grunt-cli
-npm install
+npm install grunt-contrib-jasmine
 ```
 
 execute tests via console:

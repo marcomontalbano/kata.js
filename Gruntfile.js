@@ -3,8 +3,6 @@ module.exports = function(grunt)
   // project configuration.
   grunt.initConfig(
   {
-    pkg: grunt.file.readJSON('package.json'),
-    
     jasmine : {
       // Your source files.
       src : [
@@ -30,7 +28,14 @@ module.exports = function(grunt)
         junit : {
           // Path to output JUnit xml
           path: 'output/testresults'
-        }
+        },
+
+        // The auto-generated specfile that phantomjs will use to run your tests.
+        // Automatically deleted upon normal runs. Use the :build flag to generate a SpecRunner manually e.g. grunt jasmine:myTask:build
+        outfile : 'SpecRunner.html',
+
+        // Prevents the auto-generated specfile used to run your tests from being automatically deleted.
+        keepRunner : true
       }
     }  
   });

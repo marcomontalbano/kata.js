@@ -11,3 +11,5 @@ Thumbs.db
 
 node_modules/
 output/
+.grunt/
+SpecRunner.html
