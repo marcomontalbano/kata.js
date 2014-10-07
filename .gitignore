@@ -7,9 +7,12 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
+# Wiki
 #wiki/
 
-node_modules/
-output/
+# node.js
 .grunt/
+node_modules/
+npm-debug.log
+output/
 SpecRunner.html

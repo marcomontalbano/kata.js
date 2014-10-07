@@ -11,23 +11,25 @@ module.exports = function(grunt)
       options : {
         // Third party libraries like jQuery & generally anything loaded before source, specs, and helpers.
         vendor : [
-          
+          'lib/jquery-1.11.1.min.js',
+          'lib/jasmine-jquery.js',
+          'lib/jasmine-jquery-fixtures.js',
         ],
 
         // Non-source, non-spec helper files.
         // In the default runner these are loaded after vendor files
         helpers : [
-          'spec/helpers/*.js'
+          'spec/helpers/*.js',
         ],
 
         // Your Jasmine specs.
         specs : [
-          'spec/*.js'
+          'spec/*.js',
         ],
 
         junit : {
           // Path to output JUnit xml
-          path: 'output/testresults'
+          path: 'output/testresults',
         },
 
         // The auto-generated specfile that phantomjs will use to run your tests.
