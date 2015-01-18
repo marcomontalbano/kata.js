@@ -3,7 +3,9 @@ describe('HelloWorld', function()
   it('should exist.', function()
   {
     // given
-    var helloWorld = new HelloWorld();
+    expect(function() {
+      var helloWorld = new HelloWorld();
+    }).not.toThrow();
   });
 
   it('should greet() correcly.', function()
