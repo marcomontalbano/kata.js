@@ -1,27 +1,30 @@
+;;
 function FizzBuzz()
 {
-  var canISayFizz = function( number ) {
-    return number % 3 == 0;
-  }
+    "use strict";
 
-  var canISayBuzz = function( number ) {
-    return number % 5 == 0;
-  }
+    var canISayFizz = function( number ) {
+        return number % 3 === 0;
+    };
 
-  this.say = function( number )
-  {
-    number = parseInt(number);
+    var canISayBuzz = function( number ) {
+        return number % 5 === 0;
+    };
 
-    if ( number == 0 )   throw new Error('cannot say zero');
-    if ( number <  0 )   throw new Error('cannot say negative numbers');
-    if ( isNaN(number) ) throw new Error('can say only numbers');
+    this.say = function( number )
+    {
+        number = parseInt(number);
 
-    var iSay = [];
-    if ( canISayFizz(number) ) iSay.push('Fizz');
-    if ( canISayBuzz(number) ) iSay.push('Buzz');
+        if ( number == 0 )   throw new Error('cannot say zero');
+        if ( number <  0 )   throw new Error('cannot say negative numbers');
+        if ( isNaN(number) ) throw new Error('can say only numbers');
 
-    if ( iSay.length === 0 ) return number;
-    
-    return iSay.join(' ');
-  };
+        var iSay = [];
+        if ( canISayFizz(number) ) iSay.push('Fizz');
+        if ( canISayBuzz(number) ) iSay.push('Buzz');
+
+        if ( iSay.length === 0 ) return number;
+        
+        return iSay.join(' ');
+    };
 }

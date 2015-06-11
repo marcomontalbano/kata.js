@@ -1,19 +1,22 @@
+;;
 describe('HelloWorld', function()
 {
-  it('should exist.', function()
-  {
-    // given
-    expect(function() {
-      var helloWorld = new HelloWorld();
-    }).not.toThrow();
-  });
+    "use strict";
 
-  it('should greet() correcly.', function()
-  {
-    // given
-    var helloWorld = new HelloWorld();
+    it('should exist.', function()
+    {
+        // given
+        expect(function() {
+            var helloWorld = new HelloWorld();
+        }).not.toThrow();
+    });
 
-    // then
-    expect(helloWorld.greet()).toEqual('Hello world');
-  });
+    it('should greet() correcly.', function()
+    {
+        // given
+        var helloWorld = new HelloWorld();
+
+        // then
+        expect(helloWorld.greet()).toEqual('Hello world');
+    });
 });

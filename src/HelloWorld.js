@@ -1,5 +1,6 @@
+;;
 function HelloWorld() {
 }
 HelloWorld.prototype.greet = function() {
-  return 'Hello world';
+    return 'Hello world';
 };

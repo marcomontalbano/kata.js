@@ -12,7 +12,7 @@ Test-driven development (TDD) is a software development process that relies on t
 > [wikipedia][Test driven_development]
 
 
-Javascript TDD with Jasmine
+JavaScript TDD with Jasmine
 ===========================
 
 Jasmine is a behavior-driven development framework for testing JavaScript code.
@@ -57,13 +57,36 @@ Grunt and Grunt plugins are installed and managed via npm, the [Node.js][Node.js
 
 In order to get started, you'll want to install Grunt's command line interface (CLI) globally.
 
-You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
+You may need to use sudo (for OSX, \*nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
 ```sh
 npm install -g grunt-cli
-npm install grunt-contrib-jasmine
-grunt test
+npm install
+grunt jasmine
 ```
+
+
+Continuous Integration with drone.io
+------------------------------------
+
+[drone.io][drone.io] is a continuous integration for GitHub and Bitbucket that monitors your code for bugs.
+
+In order to use drone.io with your JavaScript projects you must use output on console instead of the html.
+
+1. Create a `New Project`.
+1. Select the Repository.
+1. Select `Node.js` as language.
+1. Fill the `Build Script` field with the following script:
+
+```sh
+npm install -g grunt-cli
+npm install
+grunt jasmine
+```
+
+That's it!
+
+Click on `Build Now` and ... ... [![Build Status](https://drone.io/bitbucket.org/mmontalbano/kata-jasmine/status.png)](https://drone.io/bitbucket.org/mmontalbano/kata-jasmine/latest)
 
 
 Wiki
@@ -84,4 +107,6 @@ Wiki
 
 [Node.js]: http://nodejs.org
 
-[Check out the wiki]: https://bitbucket.org/mmontalbano/kata-jasmine/src/master/wiki/README.md
+[drone.io]: https://drone.io
+
+[Check out the wiki]: https://bitbucket.org/mmontalbano/kata-jasmine/src/master/wiki

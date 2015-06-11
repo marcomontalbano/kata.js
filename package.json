@@ -1,0 +1,23 @@
+{
+    "name" : "kata-jasmine",
+    "description" : "A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.",
+    "author" : {
+        "name" : "Marco Montalbano",
+        "url" : "http://marcomontalbano.com/"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "https://bitbucket.org/mmontalbano/kata-jasmine"
+    },
+    "keywords" : [
+        "marcomontalbano",
+        "kata",
+        "tdd",
+        "test driven development",
+        "tests"
+    ],
+    "dependencies" : {
+        "grunt-contrib-jasmine" : "*",
+        "grunt-contrib-watch" : "*"
+    }
+}
