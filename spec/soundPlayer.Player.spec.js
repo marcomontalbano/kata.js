@@ -1,4 +1,9 @@
-describe("soundPlayer.Player", function() {
+;;
+
+describe("soundPlayer.Player", function()
+{
+  "use strict";
+
   var player;
   var song;
 

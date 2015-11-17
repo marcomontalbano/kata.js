@@ -1,3 +1,5 @@
+;;
+
 var soundPlayer = soundPlayer || {};
 
 soundPlayer.Player = function() {

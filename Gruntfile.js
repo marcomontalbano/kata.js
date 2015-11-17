@@ -24,7 +24,7 @@ module.exports = function(grunt)
 
                 // Your Jasmine specs.
                 specs : [
-                    'spec/**/*Spec.js',
+                    'spec/**/*.spec.js',
                 ],
 
                 junit : {
