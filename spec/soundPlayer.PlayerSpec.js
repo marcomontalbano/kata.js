@@ -1,10 +1,10 @@
-describe("Player", function() {
+describe("soundPlayer.Player", function() {
   var player;
   var song;
 
   beforeEach(function() {
-    player = new Player();
-    song = new Song();
+    player = new soundPlayer.Player();
+    song = new soundPlayer.Song();
   });
 
   it("should be able to play a Song", function() {
