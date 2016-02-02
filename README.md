@@ -110,4 +110,4 @@ Wiki
 
 [drone.io]: https://drone.io
 
-[Check out the wiki]: https://bitbucket.org/mmontalbano/kata-jasmine/src/master/wiki
+[Check out the wiki]: https://bitbucket.org/marcomontalbano/kata-jasmine/src/master/wiki
