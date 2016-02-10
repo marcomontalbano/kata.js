@@ -1,8 +1,29 @@
 module.exports = function(grunt)
 { 
+    // require it at the top and pass in the grunt instance
+    require('time-grunt')(grunt);
+
     // project configuration.
     grunt.initConfig(
     {
+        pkg : grunt.file.readJSON('package.json'),
+
+        files : {
+            src    : 'src/**/*.js',
+            spec   : 'spec/**/*.spec.js',
+            helper : 'spec/helpers/**/*.helper.js',
+        },
+
+        jshint: {
+            options: {
+                laxcomma : true, 
+                loopfunc : true,
+
+                '-W032': true,  // https://jslinterrors.com/unnecessary-semicolon
+            },
+            src: [ '<%= files.spec %>', '<%= files.src %>' ],
+        },
+
         jasmine : {
             // Your source files.
             src : [
@@ -19,12 +40,12 @@ module.exports = function(grunt)
                 // Non-source, non-spec helper files.
                 // In the default runner these are loaded after vendor files
                 helpers : [
-                    'spec/helpers/**/*Helper.js',
+                    '<%= files.helper %>'
                 ],
 
                 // Your Jasmine specs.
                 specs : [
-                    'spec/**/*.spec.js',
+                    '<%= files.spec %>'
                 ],
 
                 junit : {
@@ -40,25 +61,32 @@ module.exports = function(grunt)
                 keepRunner : true
             }
         },
-        
+
         watch: {
             scripts: {
                 files: [
-                    'src/**/*.js',
-                    'spec/**/*.js',
+                    '<%= files.spec %>'   ,
+                    '<%= files.src %>'    ,
+                    '<%= files.helper %>' ,
                 ],
-                tasks: ['jasmine'],
+                tasks: ['test'],
                 options: {
                     spawn: false,
                 },
             },
         }
-  
+
     });
-  
-  // https://www.npmjs.com/package/grunt-contrib-jasmine
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
-  
-  // https://www.npmjs.com/package/grunt-contrib-watch
-  grunt.loadNpmTasks('grunt-contrib-watch');
+
+    // https://www.npmjs.com/package/grunt-contrib-jshint
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+    // https://www.npmjs.com/package/grunt-contrib-jasmine
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
+
+    // https://www.npmjs.com/package/grunt-contrib-watch
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    // 
+    grunt.registerTask('test', ['jshint', 'jasmine']);
 };

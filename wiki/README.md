@@ -11,3 +11,4 @@ Menu
 1.  Katas
     1.  [Hello world](Kata - Hello world.md)
     1.  [Fizz buzz](Kata - Fizz buzz.md)
+    1.  [Rock paper scissors](Kata - Rock paper scissors.md)

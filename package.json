@@ -18,6 +18,8 @@
     ],
     "dependencies" : {
         "grunt-contrib-jasmine" : "*",
-        "grunt-contrib-watch" : "*"
+        "grunt-contrib-jshint" : "*",
+        "grunt-contrib-watch" : "*",
+        "time-grunt" : "*"
     }
 }

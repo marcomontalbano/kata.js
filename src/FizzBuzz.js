@@ -16,9 +16,9 @@ function FizzBuzz()
     {
         number = parseInt(number);
 
-        if ( number == 0 )   throw new Error('cannot say zero');
-        if ( number <  0 )   throw new Error('cannot say negative numbers');
-        if ( isNaN(number) ) throw new Error('can say only numbers');
+        if ( isNaN(number) )  throw new Error('can say only numbers');
+        if ( number === 0 )   throw new Error('cannot say zero');
+        if ( number <   0 )   throw new Error('cannot say negative numbers');
 
         var iSay = [];
         if ( canISayFizz(number) ) iSay.push('Fizz');
