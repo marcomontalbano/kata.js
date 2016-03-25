@@ -1,4 +1,4 @@
-[![Build Status](https://drone.io/bitbucket.org/marcomontalbano/kata-jasmine/status.png)](https://drone.io/bitbucket.org/marcomontalbano/kata-jasmine/latest)
+[![Build Status](https://drone.io/github.com/mmontalbano/kata-jasmine/status.png)](https://drone.io/github.com/mmontalbano/kata-jasmine/latest)
 
 
 Test driven development
@@ -63,7 +63,7 @@ You may need to use sudo (for OSX, \*nix, BSD etc) or run your command shell as 
 ```sh
 npm install -g grunt-cli
 npm install
-grunt jasmine
+grunt test
 ```
 
 
@@ -77,17 +77,18 @@ In order to use drone.io with your JavaScript projects you must use output on co
 1. Create a `New Project`.
 1. Select the Repository.
 1. Select `Node.js` as language.
+1. Select `Node 0.10` as version.
 1. Fill the `Build Script` field with the following script:
 
 ```sh
 npm install -g grunt-cli
 npm install
-grunt jasmine
+grunt test
 ```
 
 That's it!
 
-Click on `Build Now` and ... ... [![Build Status](https://drone.io/bitbucket.org/marcomontalbano/kata-jasmine/status.png)](https://drone.io/bitbucket.org/marcomontalbano/kata-jasmine/latest)
+Click on `Build Now` and ... ... [![Build Status](https://drone.io/github.com/mmontalbano/kata-jasmine/status.png)](https://drone.io/github.com/mmontalbano/kata-jasmine/latest)
 
 
 Wiki
@@ -110,4 +111,4 @@ Wiki
 
 [drone.io]: https://drone.io
 
-[Check out the wiki]: https://bitbucket.org/marcomontalbano/kata-jasmine/src/master/wiki
+[Check out the wiki]: https://github.com/mmontalbano/kata-jasmine/wiki

@@ -8,7 +8,7 @@ Thumbs.db
 *.sublime-workspace
 
 # Wiki
-#wiki/
+kata-jasmine.wiki
 
 # node.js
 .grunt/

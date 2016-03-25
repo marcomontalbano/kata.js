@@ -32,8 +32,8 @@ module.exports = function(grunt)
             options : {
                 // Third party libraries like jQuery & generally anything loaded before source, specs, and helpers.
                 vendor : [
-                    'lib/jquery-1.11.1.min.js',
-                    'lib/jasmine-jquery.js',
+                    'node_modules/jquery/dist/jquery.min.js',
+                    'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
                     'lib/jasmine-jquery-fixtures.js',
                 ],
 
