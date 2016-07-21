@@ -1,4 +1,14 @@
+[![Build Status](https://travis-ci.org/mmontalbano/kata-jasmine.svg?branch=master)](https://travis-ci.org/mmontalbano/kata-jasmine)
 [![Build Status](https://drone.io/github.com/mmontalbano/kata-jasmine/status.png)](https://drone.io/github.com/mmontalbano/kata-jasmine/latest)
+
+
+TOC
+===
+
+* Sound Player
+* Hello World
+* FizzBuzz
+* Rock Paper Scissors
 
 
 Test driven development
@@ -67,6 +77,41 @@ grunt test
 ```
 
 
+Continuous Integration with travis-ci.org
+-----------------------------------------
+
+[Travis CI][Travis CI] is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.
+
+In order to use Travis CI with your JavaScript projects you must use output on console instead of the html.
+
+* Click on `+` sign to add new repository.
+* Login with your Github credentials.
+* Select the repository.
+* Update your `package.json` adding:
+
+```json
+"scripts": {
+  "test": "grunt test"
+},
+```
+
+* Add a `.travis.yml` file to your repository to tell Travis CI what to build:
+
+```yaml
+language: node_js
+node_js:
+  - "0.10"
+before_script:
+  - npm install -g grunt-cli
+
+```
+
+* *note*: `npm install` and `npm test` are automatically executed by Travis CI.
+* Commit and push your changes.
+
+That's it!
+
+
 Continuous Integration with drone.io
 ------------------------------------
 
@@ -74,11 +119,11 @@ Continuous Integration with drone.io
 
 In order to use drone.io with your JavaScript projects you must use output on console instead of the html.
 
-1. Create a `New Project`.
-1. Select the Repository.
-1. Select `Node.js` as language.
-1. Select `Node 0.10` as version.
-1. Fill the `Build Script` field with the following script:
+* Create a `New Project`.
+* Select the repository.
+* Select `Node.js` as language.
+* Select `Node 0.10` as version.
+* Fill the `Build Script` field with the following script:
 
 ```sh
 npm install -g grunt-cli
@@ -109,6 +154,7 @@ Wiki
 
 [Node.js]: http://nodejs.org
 
+[Travis CI]: https://travis-ci.org/
 [drone.io]: https://drone.io
 
 [Check out the wiki]: https://github.com/mmontalbano/kata-jasmine/wiki
