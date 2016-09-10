@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mmontalbano/kata-jasmine.svg?branch=master)](https://travis-ci.org/mmontalbano/kata-jasmine)
+[![Build Status](https://travis-ci.org/marcomontalbano/kata-jasmine.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata-jasmine)
 [![Build Status](https://drone.io/github.com/mmontalbano/kata-jasmine/status.png)](https://drone.io/github.com/mmontalbano/kata-jasmine/latest)
 
 
