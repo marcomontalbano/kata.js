@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/marcomontalbano/kata-jasmine.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata-jasmine)
-[![Build Status](https://drone.io/github.com/mmontalbano/kata-jasmine/status.png)](https://drone.io/github.com/mmontalbano/kata-jasmine/latest)
+[![Build Status](https://drone.io/github.com/marcomontalbano/kata-jasmine/status.png)](https://drone.io/github.com/marcomontalbano/kata-jasmine/latest)
 
 
 TOC
@@ -128,7 +128,7 @@ In order to use drone.io with your JavaScript projects you must use output on co
 ```sh
 npm install -g grunt-cli
 npm install
-grunt test
+npm test
 ```
 
 That's it!
