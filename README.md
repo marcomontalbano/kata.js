@@ -133,7 +133,7 @@ npm test
 
 That's it!
 
-Click on `Build Now` and ... ... [![Build Status](https://drone.io/github.com/mmontalbano/kata-jasmine/status.png)](https://drone.io/github.com/mmontalbano/kata-jasmine/latest)
+Click on `Build Now` and ... ... [![Build Status](https://drone.io/github.com/marcomontalbano/kata-jasmine/status.png)](https://drone.io/github.com/marcomontalbano/kata-jasmine/latest)
 
 
 Wiki
