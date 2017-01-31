@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/marcomontalbano/kata-jasmine.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata-jasmine)
-[![Build Status](https://drone.io/github.com/marcomontalbano/kata-jasmine/status.png)](https://drone.io/github.com/marcomontalbano/kata-jasmine/latest)
 
 
 TOC
@@ -112,30 +111,6 @@ before_script:
 That's it!
 
 
-Continuous Integration with drone.io
-------------------------------------
-
-[drone.io][drone.io] is a continuous integration for GitHub and Bitbucket that monitors your code for bugs.
-
-In order to use drone.io with your JavaScript projects you must use output on console instead of the html.
-
-* Create a `New Project`.
-* Select the repository.
-* Select `Node.js` as language.
-* Select `Node 0.10` as version.
-* Fill the `Build Script` field with the following script:
-
-```sh
-npm install -g grunt-cli
-npm install
-npm test
-```
-
-That's it!
-
-Click on `Build Now` and ... ... [![Build Status](https://drone.io/github.com/marcomontalbano/kata-jasmine/status.png)](https://drone.io/github.com/marcomontalbano/kata-jasmine/latest)
-
-
 Wiki
 ====
 
@@ -155,6 +130,5 @@ Wiki
 [Node.js]: http://nodejs.org
 
 [Travis CI]: https://travis-ci.org/
-[drone.io]: https://drone.io
 
 [Check out the wiki]: https://github.com/mmontalbano/kata-jasmine/wiki
