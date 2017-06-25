@@ -55,10 +55,20 @@ Output on HTML
 Install [Node.js][Node.js] and then execute:
 
 ```sh
-node webserver.js
+npm install -g grunt-cli
+npm install
+npm start
 ```
 
-Open you favorite browser and link to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+Alternatively you can use [Yarn](https://yarnpkg.com/lang/en/).
+
+```sh
+yarn global add grunt-cli
+yarn install
+yarn start
+```
+
+Open you favorite browser and link to [http://127.0.0.1:8000/](http://127.0.0.1:8080/).
 
 Output on Console
 -----------------
@@ -72,7 +82,15 @@ You may need to use sudo (for OSX, \*nix, BSD etc) or run your command shell as 
 ```sh
 npm install -g grunt-cli
 npm install
-grunt test
+npm test
+```
+
+Alternatively you can use [Yarn](Yarn).
+
+```sh
+yarn global add grunt-cli
+yarn install
+yarn test
 ```
 
 
@@ -99,7 +117,7 @@ In order to use Travis CI with your JavaScript projects you must use output on c
 ```yaml
 language: node_js
 node_js:
-  - "0.10"
+  - "6"
 before_script:
   - npm install -g grunt-cli
 
@@ -128,6 +146,8 @@ Wiki
 [Kata_(programming)]: http://en.wikipedia.org/wiki/Kata_(programming)
 
 [Node.js]: http://nodejs.org
+
+[Yarn]: https://yarnpkg.com/lang/en/
 
 [Travis CI]: https://travis-ci.org/
 
