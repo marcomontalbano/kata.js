@@ -4,3 +4,9 @@ node_js:
 before_script:
     - if [[ $(node -v) =~ ^v4.* ]]; then export __node_harmony=--harmony; fi
     - yarn global add grunt-cli
+script:
+  - yarn test
+after_success:
+  - yarn add coveralls codeclimate-test-reporter
+  - cat ./coverage/reports/lcov.info | ./node_modules/.bin/coveralls || true
+  - cat ./coverage/reports/lcov.info | ./node_modules/.bin/codeclimate-test-reporter || true

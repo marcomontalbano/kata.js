@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/marcomontalbano/kata-jasmine.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata-jasmine)
+[![Coverage Status](https://coveralls.io/repos/github/marcomontalbano/kata-jasmine/badge.svg?branch=master)](https://coveralls.io/github/marcomontalbano/kata-jasmine?branch=master)
 
 
 TOC

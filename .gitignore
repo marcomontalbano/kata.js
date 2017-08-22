@@ -17,3 +17,4 @@ npm-debug.log
 output/
 SpecRunner.html
 index.html
+/coverage

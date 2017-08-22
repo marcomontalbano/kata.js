@@ -58,7 +58,36 @@ module.exports = function(grunt)
                 outfile : 'index.html',
 
                 // Prevents the auto-generated specfile used to run your tests from being automatically deleted.
-                keepRunner : true
+                keepRunner : true,
+
+                template: require('grunt-template-jasmine-istanbul'),
+
+                templateOptions: {
+                    coverage: 'coverage/coverage.json',
+                    report: [
+                        {
+                            type: 'html',
+                            options: {
+                                dir: 'coverage/html'
+                            }
+                        },
+                        {
+                            type: 'lcov',
+                            options: {
+                                dir: 'coverage/reports'
+                            }
+                        },
+                        {
+                            type: 'cobertura',
+                            options: {
+                                dir: 'coverage/cobertura'
+                            }
+                        },
+                        {
+                            type: 'text-summary'
+                        }
+                    ]
+                }
             }
         },
 

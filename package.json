@@ -1,17 +1,17 @@
 {
-    "name" : "kata-jasmine",
-    "description" : "A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.",
-    "author" : {
-        "name"  : "Marco Montalbano",
-        "email" : "me@marcomontalbano.com",
-        "url"   : "https://github.com/marcomontalbano"
+    "name": "kata-jasmine",
+    "description": "A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.",
+    "author": {
+        "name": "Marco Montalbano",
+        "email": "me@marcomontalbano.com",
+        "url": "https://marcomontalbano.com"
     },
-    "license" : "MIT",
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/marcomontalbano/kata-jasmine"
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marcomontalbano/kata-jasmine"
     },
-    "keywords" : [
+    "keywords": [
         "marcomontalbano",
         "kata",
         "tdd",
@@ -22,14 +22,15 @@
         "start": "grunt test && http-server",
         "test": "grunt test"
     },
-    "devDependencies" : {
-        "grunt"                 : "^1.0.1",
-        "grunt-contrib-jshint"  : "^1.1.0",
-        "grunt-contrib-jasmine" : "^1.1.0",
-        "jquery"                : "^3.2.1",
-        "jasmine-jquery"        : "^2.1.1",
-        "grunt-contrib-watch"   : "^1.0.0",
-        "time-grunt"            : "^1.4.0",
-        "http-server"           : "^0.10.0"
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-contrib-jasmine": "^1.1.0",
+        "grunt-contrib-jshint": "^1.1.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-template-jasmine-istanbul": "^0.5.0",
+        "http-server": "^0.10.0",
+        "jasmine-jquery": "^2.1.1",
+        "jquery": "^3.2.1",
+        "time-grunt": "^1.4.0"
     }
 }
