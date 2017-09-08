@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/marcomontalbano/kata-jasmine.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata-jasmine)
-[![Coverage Status](https://coveralls.io/repos/github/marcomontalbano/kata-jasmine/badge.svg?branch=master)](https://coveralls.io/github/marcomontalbano/kata-jasmine?branch=master)
+[![Build Status](https://travis-ci.org/marcomontalbano/kata.js.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata.js)
+[![Coverage Status](https://coveralls.io/repos/github/marcomontalbano/kata.js/badge.svg?branch=master)](https://coveralls.io/github/marcomontalbano/kata.js?branch=master)
 
 
 TOC
@@ -152,4 +152,4 @@ Wiki
 
 [Travis CI]: https://travis-ci.org/
 
-[Check out the wiki]: https://github.com/mmontalbano/kata-jasmine/wiki
+[Check out the wiki]: https://github.com/marcomontalbano/kata.js/wiki

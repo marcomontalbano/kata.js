@@ -1,5 +1,5 @@
 {
-    "name": "kata-jasmine",
+    "name": "kata.js",
     "description": "A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.",
     "author": {
         "name": "Marco Montalbano",
@@ -9,7 +9,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/marcomontalbano/kata-jasmine"
+        "url": "https://github.com/marcomontalbano/kata.js"
     },
     "keywords": [
         "marcomontalbano",
