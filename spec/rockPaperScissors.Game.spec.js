@@ -71,14 +71,14 @@ describe('rockPaperScissors.Game', function()
     it('"crafty players" will lose.', function()
     {
         // given
-        var   crafty_vs_rock     = new rockPaperScissors.Game(craftyPlayer, rockPlayer)
-            , crafty_vs_paper    = new rockPaperScissors.Game(craftyPlayer, paperPlayer)
-            , crafty_vs_scissors = new rockPaperScissors.Game(craftyPlayer, scissorsPlayer)
+        var   crafty_vs_rock     = new rockPaperScissors.Game(craftyPlayer , rockPlayer)
+            , paper_vs_crafty    = new rockPaperScissors.Game(paperPlayer  , craftyPlayer)
+            , crafty_vs_scissors = new rockPaperScissors.Game(craftyPlayer , scissorsPlayer)
         ;
 
         // then
         expect( crafty_vs_rock.play() ).toBe( false );
-        expect( crafty_vs_paper.play() ).toBe( false );
+        expect( paper_vs_crafty.play() ).toBe( false );
         expect( crafty_vs_scissors.play() ).toBe( false );
     });
 
