@@ -9,6 +9,7 @@ TOC
 * Hello World
 * FizzBuzz
 * Rock Paper Scissors
+* Primes
 
 
 Test driven development
