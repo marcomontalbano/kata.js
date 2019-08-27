@@ -1,5 +1,3 @@
-;;
-
 function Primes()
 {
     "use strict";
@@ -41,3 +39,5 @@ function Primes()
         return primeNumbers;
     };
 }
+
+export default Primes;

@@ -1,12 +1,8 @@
 language: node_js
 node_js:
-  - "6"
-before_script:
-    - if [[ $(node -v) =~ ^v4.* ]]; then export __node_harmony=--harmony; fi
-    - npm install -g grunt-cli
-script:
-  - npm test
+  - "10"
 after_success:
   - npm install coveralls codeclimate-test-reporter
-  - cat ./coverage/reports/lcov.info | ./node_modules/.bin/coveralls || true
-  - cat ./coverage/reports/lcov.info | ./node_modules/.bin/codeclimate-test-reporter || true
+  - npm run coverage
+  - cat ./coverage/lcov.info | ./node_modules/.bin/coveralls || true
+  - cat ./coverage/lcov.info | ./node_modules/.bin/codeclimate-test-reporter || true

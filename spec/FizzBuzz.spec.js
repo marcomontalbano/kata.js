@@ -1,85 +1,79 @@
-;;
-describe('FizzBuzz', function()
-{
-    "use strict";
+import { expect } from 'chai';
 
-    var fizzBuzz;
+import FizzBuzz from '../src/FizzBuzz';
 
-    beforeEach(function() {
+describe('FizzBuzz', () => {
+
+    let fizzBuzz;
+
+    beforeEach(() => {
         fizzBuzz = new FizzBuzz();
     });
 
-    it('can say "Fizz" when number is divisible by three', function()
-    {
+    it('can say "Fizz" when number is divisible by three', () => {
         // given
-        var array = [3,6,9,12,18,21,24,27,33,36,39,42,48,51,54,57];
+        const array = [3, 6, 9, 12, 18, 21, 24, 27, 33, 36, 39, 42, 48, 51, 54, 57];
 
         // then
-        for (var i in array) {
-            expect(fizzBuzz.say( array[i] )).toEqual('Fizz');
-        }
+        array.forEach(number => {
+            expect(fizzBuzz.say(number)).to.eql('Fizz');
+        });
     });
 
-    it('can say "Buzz" when number is divisible by five', function()
-    {
+    it('can say "Buzz" when number is divisible by five', () => {
         // given
-        var array = [5,10,20,25,35,40,50,55,65,70,80,85,95,100];
-    
+        const array = [5, 10, 20, 25, 35, 40, 50, 55, 65, 70, 80, 85, 95, 100];
+
         // then
-        for (var i in array) {
-            expect(fizzBuzz.say( array[i] )).toEqual('Buzz');
-        }
+        array.forEach(number => {
+            expect(fizzBuzz.say(number)).to.eql('Buzz');
+        });
     });
 
-    it('can say "Fizz Buzz"', function()
-    {
+    it('can say "Fizz Buzz"', () => {
         // given
-        var array = [15,30,45,60,75,90,105,120,135,150,165,180,195,210,225,240,255];
+        const array = [15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255];
 
         // then
-        for (var i in array) {
-            expect(fizzBuzz.say( array[i] )).toEqual('Fizz Buzz');
-        }
+        array.forEach(number => {
+            expect(fizzBuzz.say(number)).to.eql('Fizz Buzz');
+        });
     });
 
-    it('can say the number', function()
-    {
+    it('can say the number', () => {
         // given
-        var array = [1,2,4,7,8,11,13,14,16,17,19,22,23,26,28,29,31,32];
+        const array = [1, 2, 4, 7, 8, 11, 13, 14, 16, 17, 19, 22, 23, 26, 28, 29, 31, 32];
 
         // then
-        for (var i in array) {
-            expect(fizzBuzz.say( array[i] )).toEqual( array[i] );
-        }
+        array.forEach(number => {
+            expect(fizzBuzz.say(number)).to.eql(number);
+        });
     });
 
-    it('cannot say zero', function()
-    {
+    it('cannot say zero', () => {
         // then
-        expect(function() {
+        expect(() => {
             fizzBuzz.say(0);
-        }).toThrowError('cannot say zero');
+        }).to.throw('cannot say zero');
     });
 
-    it('cannot say negative numbers', function()
-    {
+    it('cannot say negative numbers', () => {
         // given
-        var array = [-1, -2, -43, -432];
+        const array = [-1, -2, -43, -432];
 
         // then
-        for (var i in array) {
-            expect(function() {
-                fizzBuzz.say( array[i] );
-            }).toThrowError('cannot say negative numbers');
-        }
+        array.forEach(number => {
+            expect(() => {
+                fizzBuzz.say(number);
+            }).to.throw('cannot say negative numbers');
+        });
     });
 
-    it('can say only numbers', function()
-    {
+    it('can say only numbers', () => {
         // then
-        expect(function() {
+        expect(() => {
             fizzBuzz.say('hi!');
-        }).toThrowError('can say only numbers');
+        }).to.throw('can say only numbers');
     });
 
 });

@@ -1,23 +1,21 @@
-;;
+import { expect } from 'chai';
 
-describe('HelloWorld', function()
-{
-    "use strict";
+import HelloWorld from '../src/HelloWorld';
 
-    it('should exist.', function()
-    {
+describe('HelloWorld', () => {
+
+    it('should exist.', () => {
         // given
-        expect(function() {
-            var helloWorld = new HelloWorld();
-        }).not.toThrow();
+        expect(() => {
+            new HelloWorld();
+        }).to.not.throw();
     });
 
-    it('should greet() correcly.', function()
-    {
+    it('should greet() correcly.', () => {
         // given
-        var helloWorld = new HelloWorld();
+        const helloWorld = new HelloWorld();
 
         // then
-        expect(helloWorld.greet()).toEqual('Hello world');
+        expect(helloWorld.greet()).to.eql('Hello world');
     });
 });
