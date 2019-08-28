@@ -25,6 +25,7 @@ jobs:
         CI: true
     - name: Run `test`
       run: npm test
+
     - name: Run `coverage`
       run: npm run coverage
     - name: Upload `coverage` artifact
