@@ -23,10 +23,11 @@ jobs:
         npm run build --if-present
       env:
         CI: true
-    - name: Run test
+    - name: Run `test`
       run: npm test
-    - name: Run coverage
+    - name: Run `coverage`
       run: npm run coverage
+    - name: Upload `coverage` artifact
       uses: actions/upload-artifact@v1
       with:
         name: coverage
