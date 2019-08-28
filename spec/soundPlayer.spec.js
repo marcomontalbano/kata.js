@@ -59,12 +59,12 @@ describe('soundPlayer', () => {
 
         // demonstrates use of spies to intercept and test method calls
         it('tells the current song if the user has made it a favorite', () => {
-            const mockPersistFavoriteStatus = mock(song).expects('persistFavoriteStatus');
+            const mockPersistFavoriteStatus = mock(song).expects('persistFavoriteStatus').once().withExactArgs(true);
 
             player.play(song);
             player.makeFavorite();
 
-            expect(mockPersistFavoriteStatus.once().verify()).to.be.true;
+            expect(mockPersistFavoriteStatus.verify()).to.be.true;
         });
 
         //demonstrates use of expected exceptions
