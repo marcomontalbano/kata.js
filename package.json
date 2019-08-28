@@ -26,18 +26,24 @@
     "scripts": {
         "test": "eslint ./**/*.js && mocha",
         "watch": "chokidar ./**/*.js -c 'npm test -- --reporter dot'",
-        "coverage": "nyc mocha --reporter dot"
+        "coverage": "nyc mocha --reporter dot",
+        "stryker": "stryker run"
     },
     "devDependencies": {
         "@babel/core": "~7.5.5",
         "@babel/preset-env": "~7.5.5",
         "@babel/register": "~7.5.5",
+        "@stryker-mutator/core": "~2.0.2",
+        "@stryker-mutator/html-reporter": "~2.0.2",
+        "@stryker-mutator/javascript-mutator": "~2.0.2",
+        "@stryker-mutator/mocha-runner": "~2.0.2",
         "chai": "~4.2.0",
         "chokidar-cli": "~2.0.0",
         "eslint": "~6.2.2",
         "mocha": "~6.2.0",
         "nyc": "~14.1.1",
-        "sinon": "~7.4.1"
+        "sinon": "~7.4.1",
+        "stryker-cli": "~1.0.0"
     },
     "nyc": {
         "reporter": [

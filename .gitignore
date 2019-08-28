@@ -19,4 +19,6 @@ output/
 SpecRunner.html
 index.html
 /coverage
+/reports
 .nyc_output
+.stryker-tmp
