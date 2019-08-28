@@ -1,8 +1,9 @@
+[![Build Status](https://github.com/marcomontalbano/kata.js/workflows/Node%20CI/badge.svg)](https://github.com/marcomontalbano/kata.js)
 [![Build Status](https://travis-ci.org/marcomontalbano/kata.js.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata.js)
 [![Coverage Status](https://coveralls.io/repos/github/marcomontalbano/kata.js/badge.svg?branch=master)](https://coveralls.io/github/marcomontalbano/kata.js?branch=master)
 
 
-Test-Driven Development with Jasmine: How to
+Test-Driven Development with Mocha: How to
 ============================================
 
 A [code kata](https://en.wikipedia.org/wiki/Kata_(programming)) is an exercise in programming which helps a programmer hone their skills through practice and repetition.
@@ -21,38 +22,9 @@ The term was probably first coined by [Dave Thomas](https://en.wikipedia.org/wik
 
 ## Setup
 
-There are two ways to execute tests.
-
-### Output on HTML
-
-Install [Node.js](http://nodejs.org) and then execute:
+All project dependencies are installed and managed via npm, the [Node.js](http://nodejs.org) package manager.
 
 ```sh
-npm install -g grunt-cli
-npm install
-npm start
-```
-
-Alternatively you can use [Yarn](https://yarnpkg.com/lang/en/).
-
-```sh
-yarn global add grunt-cli
-yarn
-yarn start
-```
-
-Open you favorite browser and link to [http://127.0.0.1:8000/](http://127.0.0.1:8080/).
-
-### Output on Console
-
-Grunt and Grunt plugins are installed and managed via npm, the [Node.js](http://nodejs.org) package manager.
-
-In order to get started, you'll want to install Grunt's command line interface (CLI) globally.
-
-You may need to use sudo (for OSX, \*nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
-
-```sh
-npm install -g grunt-cli
 npm install
 npm test
 ```
@@ -60,7 +32,6 @@ npm test
 Alternatively you can use [Yarn](https://yarnpkg.com/lang/en/).
 
 ```sh
-yarn global add grunt-cli
 yarn
 yarn test
 ```
@@ -79,7 +50,7 @@ In order to use Travis CI with your JavaScript projects you must use output on c
 
 ```json
 "scripts": {
-  "test": "grunt test"
+  "test": "mocha ./**/*.spec.js"
 },
 ```
 
@@ -88,9 +59,7 @@ In order to use Travis CI with your JavaScript projects you must use output on c
 ```yaml
 language: node_js
 node_js:
-  - "6"
-before_script:
-  - npm install -g grunt-cli
+  - "10"
 
 ```
 
@@ -108,59 +77,72 @@ Test-driven development (TDD) is a software development process that relies on t
 * then produces the minimum amount of code to pass that test.
 * finally refactors the new code to acceptable standards.
 
-### Jasmine
+### Toolkit
 
-[Jasmine](http://jasmine.github.io/2.0/introduction.html) is a behavior-driven development framework for testing JavaScript code.
-It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests.
+[Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
 
-[jasmine-jquery](https://github.com/velesin/jasmine-jquery) provides two extensions for Jasmine JavaScript Testing Framework:
+[Chai](https://www.chaijs.com/) is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
 
-- a set of custom matchers for jQuery framework
-- an API for handling HTML, CSS, and JSON fixtures in your specs
+[Sinon](https://sinonjs.org/) is a standalone test spies, stubs and mocks for JavaScript. Works with any unit testing framework.
+
+[Istanbul](https://istanbul.js.org/) instruments your ES5 and ES2015+ JavaScript code with line counters, so that you can track how well your unit-tests exercise your codebase.
+The [nyc](https://github.com/istanbuljs/nyc) command-line-client for Istanbul works well with most JavaScript testing frameworks: tap, mocha, AVA, etc.
+
+[Stryker](https://stryker-mutator.io/) uses one design mentality to implement mutation testing. It's easy to use and fast to run. Stryker will only mutate your source code, making sure there are no false positives.
 
 ### Example
 
-The [standalone distribution](https://github.com/jasmine/jasmine#installation) contains everything you need to start running Jasmine.
+Following an example of Test-Driven Development using Mocha and Chai for the most famous application: **`Hello World`**!
 
-After downloading a particular version and unzipping, opening `SpecRunner.html` will run the included specs. You’ll note that both the source files and their respective specs are linked in the `head` tag of the `SpecRunner.html`. To start using Jasmine, replace the source/spec files with your own.
+Setup is easy, just run an `npm` command and change few lines into your `package.json`.
 
-Following an example of Test-Driven Development using Jasmine for the most famous application: **Hello World**!
-
-First of all we should create a new file `HelloWorldSpec.js` inside the folder `spec` of our project and add the `script` tag to the `SpecRunner.html`.
-
-```html
-<script type="text/javascript" src="spec/HelloWorldSpec.js"></script>
+```sh
+npm install -D mocha chai
 ```
+
+```json
+"scripts": {
+  "test": "mocha ./**/*.spec.js"
+},
+```
+
+Now you are able to run unit tests with `npm test`.
+
+> If you want to use ES6 syntax with import/export you will need `babel` also. To understand more about it, you can checkout this project, I'm using it :smile:
+
+First of all we should create a new file `HelloWorld.spec.js`.
 
 Now we can start writing our first test.
 
 ```js
-//- spec/HelloWorldSpec.js
+//- HelloWorldSpec.js
 
-describe('HelloWorld', function() {
-  it('should exist.', function() {
+const expect = require('chai').expect;
+const HelloWorld = require('./HelloWorld');
+
+describe('HelloWorld', () => {
+  it('should exist.', () => {
     // given
-    var helloWorld = new HelloWorld();
+    new HelloWorld();
   });
 });
+
 ```
 :exclamation: **RED** - Try running test and it will fail.
 
 ---
 
-Create a new file `HelloWorld.js` inside the folder `src` of our project and add the `script` tag to the `SpecRunner.html`.
-
-```html
-<script type="text/javascript" src="src/HelloWorld.js"></script>
-```
+Create a new file `HelloWorld.js`.
 
 The next step is writing some code that would cause the test to pass.
 
 ```js
-//- src/HelloWorld.js
+//- HelloWorld.js
 
 function HelloWorld() {
 }
+
+module.exports = HelloWorld;
 ```
 
 :green_heart: **GREEN** - Try running test and it will pass.
@@ -174,17 +156,16 @@ function HelloWorld() {
 We have a green bar! Now we can write a new test.
 
 ```js
-//- spec/HelloWorldSpec.js
+//- HelloWorld.spec.js
 
 ...
 
-  it('should greet() correcly.', function()
-  {
+  it('should greet() correcly.', () => {
     // given
-    var helloWorld = new HelloWorld();
+    const helloWorld = new HelloWorld();
 
     // then
-    expect(helloWorld.greet()).toEqual('Hello world');
+    expect(helloWorld.greet()).to.equal('Hello world');
   });
 
 ...
@@ -197,11 +178,11 @@ We have a green bar! Now we can write a new test.
 Now we can write some code that would cause the test to pass.
 
 ```js
-//- src/HelloWorld.js
+//- HelloWorld.js
 
 ...
 
-HelloWorld.prototype.greet = function() {
+HelloWorld.prototype.greet = function () {
   return 'Hello world';
 };
 ```
@@ -218,37 +199,64 @@ HelloWorld.prototype.greet = function() {
 
 ---
 
-**SPEC** - HelloWorldSpec.js
+**SPEC** - HelloWorld.spec.js
 
 ```js
-describe('HelloWorld', function()
-{
-  it('should exist.', function()
-  {
+//- HelloWorld.spec.js
+
+const expect = require('chai').expect;
+const HelloWorld = require('./HelloWorld');
+
+describe('HelloWorld', () => {
+
+  it('should exist.', () => {
     // given
-    var helloWorld = new HelloWorld();
+    new HelloWorld();
   });
 
-  it('should greet() correcly.', function()
-  {
+  it('should greet() correcly.', () => {
     // given
-    var helloWorld = new HelloWorld();
+    const helloWorld = new HelloWorld();
 
     // then
-    expect(helloWorld.greet()).toEqual('Hello world');
+    expect(helloWorld.greet()).to.equal('Hello world');
   });
+
 });
 ```
 
 **SRC** - HelloWorld.js
 
 ```js
+//- HelloWorld.js
+
 function HelloWorld() {
 }
-HelloWorld.prototype.greet = function() {
+
+HelloWorld.prototype.greet = function () {
   return 'Hello world';
 };
+
+module.exports = HelloWorld;
 ```
+
+---
+
+Now if we decide to refactor the application moving from `prototype` to `class`, we can do it without fear.
+
+So, let's do this :sunglasses:
+
+```js
+//- HelloWorld.js
+
+module.exports = class {
+  greet() {
+    return 'Hello world';
+  }
+}
+```
+
+:green_heart: **GREEN** - Try running test and it will pass.
 
 
 ## Further readings

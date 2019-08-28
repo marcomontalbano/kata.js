@@ -19,3 +19,4 @@ output/
 SpecRunner.html
 index.html
 /coverage
+.nyc_output
