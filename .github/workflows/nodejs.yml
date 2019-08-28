@@ -17,10 +17,19 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: Project setup `npm install && npm run build`
       run: |
         npm install
         npm run build --if-present
-        npm test
       env:
         CI: true
+    - name: Run `test`
+      run: npm test
+
+    - name: Run `coverage`
+      run: npm run coverage
+    - name: Upload `coverage` artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage
+        path: coverage/lcov-report
