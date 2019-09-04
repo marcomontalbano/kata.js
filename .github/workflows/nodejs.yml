@@ -15,8 +15,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
-    - name: Project setup `npm install`
-      run: npm install
+    - name: Project setup `npm ci`
+      run: npm ci
     - name: Run `test`
       run: npm test
 
@@ -30,8 +30,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 10.x
-    - name: Project setup `npm install`
-      run: npm install
+    - name: Project setup `npm ci`
+      run: npm ci
 
     - name: Run `coverage`
       run: npm run coverage
@@ -60,13 +60,11 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 10.x
-    - name: Project setup `npm install`
-      run: npm install
+    - name: Project setup `npm ci`
+      run: npm ci
 
     - name: Run `stryker`
-      run: |
-        npm install
-        npm run stryker
+      run: npm run stryker
     - name: Upload `stryker` artifact
       uses: actions/upload-artifact@v1
       with:
@@ -85,10 +83,10 @@ jobs:
       if: github.ref == 'refs/heads/master'
       with:
         node-version: 10.x
-    - name: Project setup `npm install && npm run build`
+    - name: Project setup `npm ci && npm run build`
       if: github.ref == 'refs/heads/master'
       run: |
-        npm install
+        npm ci
         npm run build --if-present
       env:
         CI: true
