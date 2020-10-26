@@ -16,7 +16,7 @@ describe('Sir', () => {
         it(`should not tell anything is there's nothing to tell`, () => {
             owner.addFriend(sir1);
             owner.propagate();
-            expect(sir1.ask()).to.be.eql(undefined);
+            expect(sir1.ask()).to.be.eql('');
         })
 
         it(`shouldn't forget about a secret if he/she doesn't have friends`, () => {
@@ -30,7 +30,7 @@ describe('Sir', () => {
             owner.secret('Message1');
             owner.propagate();
             expect(owner.ask()).to.be.eql('Message1');
-            expect(sir1.ask()).to.be.eql(undefined);
+            expect(sir1.ask()).to.be.eql('');
         })
 
         it('should forget about previous secret if he receives a new secret', () => {
@@ -40,14 +40,14 @@ describe('Sir', () => {
             owner.secret('Message1');
             owner.propagate();
             expect(owner.ask()).to.be.eql('Message1');
-            expect(sir1.ask()).to.be.eql(undefined);
-            expect(sit2.ask()).to.be.eql(undefined);
+            expect(sir1.ask()).to.be.eql('');
+            expect(sit2.ask()).to.be.eql('');
 
             owner.secret('Message2');
             owner.propagate();
             expect(owner.ask()).to.be.eql('Message2');
-            expect(sir1.ask()).to.be.eql(undefined);
-            expect(sit2.ask()).to.be.eql(undefined);
+            expect(sir1.ask()).to.be.eql('');
+            expect(sit2.ask()).to.be.eql('');
         })
     })
 });

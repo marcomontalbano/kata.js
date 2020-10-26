@@ -9,7 +9,10 @@ export class Lady extends Person {
     }
 
     propagate() {
+        super.propagate();
+
         this.friends.forEach(friend => {
+            this.addToNotified(friend);
             return friend.secret(this.ask());
         });
 

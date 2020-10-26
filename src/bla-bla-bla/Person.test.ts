@@ -17,7 +17,7 @@ describe('Person', () => {
 
     it('should be able to say nothing if no secrets are present', () => {
         const secret = owner.ask();
-        expect(secret).to.be.eql(undefined);
+        expect(secret).to.be.eql('');
     })
 
     it('should be able to be asked for a secret', () => {

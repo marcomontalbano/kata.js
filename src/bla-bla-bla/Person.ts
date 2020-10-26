@@ -1,13 +1,14 @@
 export class Person {
     secrets: string[] = []
     friends: Person[] = []
+    notified: Person[] = []
 
     constructor(public name: string) {
 
     }
 
     propagate() {
-
+        this.notified = [];
     }
 
     secret(secret: string) {
@@ -15,7 +16,11 @@ export class Person {
     }
 
     ask() {
-        return this.secrets[0];
+        return this.secrets[0] || '';
+    }
+
+    addToNotified(person: Person) {
+        this.notified.push(person);
     }
 
     addFriend(friend: Person) {
