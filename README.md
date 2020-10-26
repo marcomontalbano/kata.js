@@ -59,7 +59,7 @@ In order to use Travis CI with your JavaScript projects you must use output on c
 ```yaml
 language: node_js
 node_js:
-  - "10"
+  - "12"
 
 ```
 

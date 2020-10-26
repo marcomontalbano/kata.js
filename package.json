@@ -23,8 +23,8 @@
         "node": ">=12"
     },
     "scripts": {
-        "test": "eslint ./**/*.js && mocha",
-        "watch": "chokidar ./**/*.js -c 'npm test -- --reporter dot'",
+        "test": "eslint ./src/**/*.js && mocha",
+        "watch": "chokidar ./src/**/*.js -c 'npm test -- --reporter dot'",
         "coverage": "nyc mocha --reporter dot",
         "stryker": "stryker run"
     },

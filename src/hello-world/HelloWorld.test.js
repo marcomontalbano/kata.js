@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 
-import HelloWorld from '../src/HelloWorld';
+import HelloWorld from './HelloWorld';
 
-describe('HelloWorld', () => {
+describe('hello-world', () => {
 
     it('should exist.', () => {
         // given

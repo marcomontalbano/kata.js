@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 
-import FizzBuzz from '../src/FizzBuzz';
+import FizzBuzz from './FizzBuzz';
 
-describe('FizzBuzz', () => {
+describe('fizz-buzz', () => {
 
     let fizzBuzz;
 

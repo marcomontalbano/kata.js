@@ -1,7 +1,7 @@
 import { expect, Assertion } from 'chai';
 import { mock } from 'sinon';
 
-import soundPlayer from '../src/soundPlayer';
+import soundPlayer from './soundPlayer';
 
 Assertion.addMethod('toBePlaying', function (song) {
     const player = this._obj;
@@ -19,7 +19,7 @@ Assertion.addMethod('toBePlaying', function (song) {
     );
 });
 
-describe('soundPlayer', () => {
+describe('sound-player', () => {
     describe('Player', () => {
 
         let player, song;

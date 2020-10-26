@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 
-import Primes from '../src/Primes';
+import Primes from './Primes';
 
-describe('Primes', function () {
+describe('primes', function () {
     "use strict";
 
     let primes;

@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import { stub } from 'sinon';
 
-import rockPaperScissors from '../src/rockPaperScissors';
+import rockPaperScissors from './rockPaperScissors';
 
-describe('rockPaperScissors', () => {
+describe('rock-paper-scissors', () => {
     describe('Player', () => {
 
         let player, elements;
