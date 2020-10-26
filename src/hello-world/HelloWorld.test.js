@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import HelloWorld from './HelloWorld';
 
-describe('hello-world', () => {
+describe('HelloWorld', () => {
 
     it('should exist.', () => {
         // given

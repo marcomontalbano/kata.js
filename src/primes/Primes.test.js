@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import Primes from './Primes';
 
-describe('primes', function () {
+describe('Primes', function () {
     "use strict";
 
     let primes;

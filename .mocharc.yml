@@ -2,3 +2,5 @@
 
 require: ['ts-node/register', '@babel/register']
 spec: './src/**/*.test.[j|t]s'
+file: ['test-loader.ts']
+extension: ['js', 'ts']

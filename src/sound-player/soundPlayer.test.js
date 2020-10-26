@@ -19,7 +19,7 @@ Assertion.addMethod('toBePlaying', function (song) {
     );
 });
 
-describe('sound-player', () => {
+describe('soundPlayer.', () => {
     describe('Player', () => {
 
         let player, song;

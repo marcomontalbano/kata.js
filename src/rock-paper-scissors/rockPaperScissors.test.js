@@ -3,7 +3,7 @@ import { stub } from 'sinon';
 
 import rockPaperScissors from './rockPaperScissors';
 
-describe('rock-paper-scissors', () => {
+describe('rockPaperScissors.', () => {
     describe('Player', () => {
 
         let player, elements;

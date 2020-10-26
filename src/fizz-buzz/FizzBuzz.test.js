@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import FizzBuzz from './FizzBuzz';
 
-describe('fizz-buzz', () => {
+describe('FizzBuzz', () => {
 
     let fizzBuzz;
 
