@@ -6,6 +6,10 @@ export class Person {
 
     }
 
+    propagate() {
+
+    }
+
     secret(secret: string) {
         this.secrets.push(secret);
     }
