@@ -1,4 +1,4 @@
 # https://github.com/mochajs/mocha/blob/master/example/config/.mocharc.yml
 
-require: '@babel/register'
-spec: ./src/**/*.test.js
+require: ['ts-node/register', '@babel/register']
+spec: './src/**/*.test.[j|t]s'
