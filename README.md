@@ -3,8 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/marcomontalbano/kata.js/badge.svg?branch=master)](https://coveralls.io/github/marcomontalbano/kata.js?branch=master)
 
 
-Test-Driven Development with Mocha: How to
-============================================
+# Test-Driven Development with Mocha: How to
 
 A [code kata](https://en.wikipedia.org/wiki/Kata_(programming)) is an exercise in programming which helps a programmer hone their skills through practice and repetition.
 
