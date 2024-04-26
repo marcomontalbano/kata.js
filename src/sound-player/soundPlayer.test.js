@@ -1,3 +1,5 @@
+import { describe, beforeEach, it } from 'vitest'
+
 import { expect, Assertion } from 'chai';
 import { mock } from 'sinon';
 

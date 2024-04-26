@@ -1,3 +1,5 @@
+import { describe, beforeEach, it } from 'vitest'
+
 import { expect } from 'chai';
 import { Sir } from './Sir';
 

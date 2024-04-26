@@ -1,6 +1,8 @@
-import { expect } from 'chai';
+import { it } from 'vitest'
 
-import { helloWorld } from './typescript';
+import { expect } from 'chai'
+
+import { helloWorld } from './typescript'
 
 it('can be used', () => {
     expect(helloWorld).to.be.eql('Hi all!');

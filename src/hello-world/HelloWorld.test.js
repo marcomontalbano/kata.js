@@ -1,6 +1,8 @@
-import { expect } from 'chai';
+import { describe, it } from 'vitest'
 
-import HelloWorld from './HelloWorld';
+import { expect } from 'chai'
+
+import HelloWorld from './HelloWorld'
 
 describe('HelloWorld', () => {
 

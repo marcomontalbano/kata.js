@@ -1,6 +1,0 @@
-# https://github.com/mochajs/mocha/blob/master/example/config/.mocharc.yml
-
-require: ['ts-node/register', '@babel/register']
-spec: './src/**/*.test.[j|t]s'
-file: ['test-loader.ts']
-extension: ['js', 'ts']
