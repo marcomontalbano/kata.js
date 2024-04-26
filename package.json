@@ -20,13 +20,15 @@
         "tests"
     ],
     "engines": {
-        "node": ">=12"
+        "node": ">=20"
     },
     "scripts": {
         "test": "eslint ./src/**/*.js && mocha",
         "watch": "chokidar ./src/**/*.[j,t]s -c 'npm test -- --reporter dot'",
         "coverage": "nyc mocha --reporter dot",
-        "stryker": "stryker run"
+        "stryker": "stryker run",
+        "dep:major": "npx npm-check-updates --packageFile '**/package.json' -u",
+        "dep:minor": "npm run dep:major -t minor"
     },
     "devDependencies": {
         "@babel/core": "~7.11.0",
