@@ -1,9 +1,8 @@
 [![Build Status](https://github.com/marcomontalbano/kata.js/workflows/Node%20CI/badge.svg)](https://github.com/marcomontalbano/kata.js)
-[![Build Status](https://travis-ci.org/marcomontalbano/kata.js.svg?branch=master)](https://travis-ci.org/marcomontalbano/kata.js)
-[![Coverage Status](https://coveralls.io/repos/github/marcomontalbano/kata.js/badge.svg?branch=master)](https://coveralls.io/github/marcomontalbano/kata.js?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/marcomontalbano/kata.js/badge.svg?branch=main)](https://coveralls.io/github/marcomontalbano/kata.js?branch=main)
 
 
-# Test-Driven Development with Mocha: How to
+# Test-Driven Development with Vitest: How to
 
 A [code kata](https://en.wikipedia.org/wiki/Kata_(programming)) is an exercise in programming which helps a programmer hone their skills through practice and repetition.
 
@@ -12,7 +11,6 @@ The term was probably first coined by [Dave Thomas](https://en.wikipedia.org/wik
 
 ## Katas
 
-* Sound Player
 * Hello World
 * FizzBuzz
 * Rock Paper Scissors
@@ -28,45 +26,41 @@ npm install
 npm test
 ```
 
-Alternatively you can use [Yarn](https://yarnpkg.com/lang/en/).
 
-```sh
-yarn
-yarn test
-```
+## Continuous Integration with Github Actions workflows
 
+A [GitHub Actions](https://github.com/features/actions) [workflow](https://docs.github.com/en/actions/using-workflows/about-workflows) is essentially a customizable automated process that can perform various tasks. You set it up using a YAML file in your repository, and it kicks in based on events in your repository, manual triggers, or on a schedule you define.
 
-## Continuous Integration with travis-ci.org
+These workflows live in the `.github/workflows` directory of your repository, and you can have multiple workflows, each handling different tasks.
 
-[Travis CI](https://travis-ci.org/) is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.
-
-In order to use Travis CI with your JavaScript projects you must use output on console instead of the html.
-
-* Click on `+` sign to add new repository.
-* Login with your Github credentials.
-* Select the repository.
-* Update your `package.json` adding:
-
-```json
-"scripts": {
-  "test": "mocha ./**/*.spec.js"
-},
-```
-
-* Add a `.travis.yml` file to your repository to tell Travis CI what to build:
+This is just an example:
 
 ```yaml
-language: node_js
-node_js:
-  - "12"
+name: Node CI
 
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [18.x, 20.x, 22.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Project setup `npm ci`
+      run: npm ci
+
+    - name: Run `test`
+      run: npm test
 ```
-
-* *note*: `npm install` and `npm test` are automatically executed by Travis CI.
-* Commit and push your changes.
-
-That's it!
-
 
 ## Test-driven development
 
@@ -78,36 +72,29 @@ Test-driven development (TDD) is a software development process that relies on t
 
 ### Toolkit
 
-[Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
+[Vitest](https://vitest.dev/) is a next-generation unit testing framework built on Vite, offering lightning-fast test execution, seamless migration from Jest due to its compatible features, intelligent watch mode for efficient development, and out-of-the-box support for modern JavaScript like ES modules, TypeScript, and JSX.
 
-[Chai](https://www.chaijs.com/) is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
+[Istanbul](https://istanbul.js.org/) is a JavaScript code coverage tool that helps you understand how well your tests exercise your codebase. It works by instrumenting your code to track which parts are executed during testing, providing insights into areas that might need more attention.
 
-[Sinon](https://sinonjs.org/) is a standalone test spies, stubs and mocks for JavaScript. Works with any unit testing framework.
-
-[Istanbul](https://istanbul.js.org/) instruments your ES5 and ES2015+ JavaScript code with line counters, so that you can track how well your unit-tests exercise your codebase.
-The [nyc](https://github.com/istanbuljs/nyc) command-line-client for Istanbul works well with most JavaScript testing frameworks: tap, mocha, AVA, etc.
-
-[Stryker](https://stryker-mutator.io/) uses one design mentality to implement mutation testing. It's easy to use and fast to run. Stryker will only mutate your source code, making sure there are no false positives.
+[Stryker](https://stryker-mutator.io/) is a tool for mutation testing, specifically designed for JavaScript and similar languages.  It injects tiny faults (mutations) into your code, then re-runs your tests. If a mutation breaks a test, it indicates your tests are effective at catching errors. This helps improve the quality and reliability of your codebase.
 
 ### Example
 
-Following an example of Test-Driven Development using Mocha and Chai for the most famous application: **`Hello World`**!
+Following an example of Test-Driven Development using Vitest for the most famous application: **`Hello World`**!
 
 Setup is easy, just run an `npm` command and change few lines into your `package.json`.
 
 ```sh
-npm install -D mocha chai
+npm install -D vitest
 ```
 
 ```json
 "scripts": {
-  "test": "mocha ./**/*.spec.js"
+  "test": "vitest"
 },
 ```
 
 Now you are able to run unit tests with `npm test`.
-
-> If you want to use ES6 syntax with import/export you will need `babel` also. To understand more about it, you can checkout this project, I'm using it :smile:
 
 First of all we should create a new file `HelloWorld.spec.js`.
 
@@ -116,8 +103,8 @@ Now we can start writing our first test.
 ```js
 //- HelloWorldSpec.js
 
-const expect = require('chai').expect;
-const HelloWorld = require('./HelloWorld');
+import { describe, it, expect } from 'vitest';
+import HelloWorld from from './HelloWorld';
 
 describe('HelloWorld', () => {
   it('should exist.', () => {
@@ -141,7 +128,7 @@ The next step is writing some code that would cause the test to pass.
 function HelloWorld() {
 }
 
-module.exports = HelloWorld;
+export default HelloWorld;
 ```
 
 :green_heart: **GREEN** - Try running test and it will pass.
@@ -159,7 +146,7 @@ We have a green bar! Now we can write a new test.
 
 ...
 
-  it('should greet() correcly.', () => {
+  it('should greet() correctly.', () => {
     // given
     const helloWorld = new HelloWorld();
 
@@ -198,13 +185,13 @@ HelloWorld.prototype.greet = function () {
 
 ---
 
-**SPEC** - HelloWorld.spec.js
+**SPEC** - `HelloWorld.spec.js`
 
 ```js
 //- HelloWorld.spec.js
 
-const expect = require('chai').expect;
-const HelloWorld = require('./HelloWorld');
+import { describe, it, expect } from 'vitest';
+import HelloWorld from from './HelloWorld';
 
 describe('HelloWorld', () => {
 
@@ -213,7 +200,7 @@ describe('HelloWorld', () => {
     new HelloWorld();
   });
 
-  it('should greet() correcly.', () => {
+  it('should greet() correctly.', () => {
     // given
     const helloWorld = new HelloWorld();
 
@@ -224,7 +211,7 @@ describe('HelloWorld', () => {
 });
 ```
 
-**SRC** - HelloWorld.js
+**SRC** - `HelloWorld.js`
 
 ```js
 //- HelloWorld.js
@@ -236,7 +223,7 @@ HelloWorld.prototype.greet = function () {
   return 'Hello world';
 };
 
-module.exports = HelloWorld;
+export default HelloWorld;
 ```
 
 ---
@@ -248,9 +235,9 @@ So, let's do this :sunglasses:
 ```js
 //- HelloWorld.js
 
-module.exports = class {
+export default class {
   greet() {
-    return 'Hello world';
+    return 'Hello world'
   }
 }
 ```
@@ -262,5 +249,3 @@ module.exports = class {
 
 * [Test Driven Development: By Example](https://www.amazon.it/gp/product/0321146530/ref=as_li_tl?ie=UTF8&tag=marcomontalba-21&camp=3414&creative=21718&linkCode=as2&creativeASIN=0321146530&linkId=1ca1dd6ac49f36bde8d8873e0c219592) (Kent Beck) - Addison-Wesley
 * [JavaScript Testing with Jasmine](https://www.amazon.it/gp/product/B00C10Y9BS/ref=as_li_tl?ie=UTF8&tag=marcomontalba-21&camp=3414&creative=21718&linkCode=as2&creativeASIN=B00C10Y9BS&linkId=09b0ff07e7fdfff34479e6b75c6c0de6) (Evan Hahn) - O'Reilly Media
-* [Jasmine JavaScript Testing](https://www.amazon.it/gp/product/B00ESX15MW/ref=as_li_tl?ie=UTF8&tag=marcomontalba-21&camp=3414&creative=21718&linkCode=as2&creativeASIN=B00ESX15MW&linkId=56d03cf6deae504b4eef80075e3be7fb) (Paulo Ragonha) - Packt Publishing
-* [JavaScript Unit Testing](https://www.amazon.it/gp/product/1782160620/ref=as_li_tl?ie=UTF8&tag=marcomontalba-21&camp=3414&creative=21718&linkCode=as2&creativeASIN=1782160620&linkId=9389d2655483038a950339ca11a7035c) (Hazem Saleh) - Packt Publishing

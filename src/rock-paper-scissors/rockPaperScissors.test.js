@@ -1,5 +1,6 @@
-import { expect } from 'chai';
-import { stub } from 'sinon';
+// @ts-check
+
+import { describe, beforeEach, it, expect, vi } from 'vitest';
 
 import rockPaperScissors from './rockPaperScissors';
 
@@ -60,10 +61,10 @@ describe('rockPaperScissors.', () => {
             scissorsPlayer = new rockPaperScissors.Player();
             craftyPlayer = new rockPaperScissors.Player();
 
-            stub(rockPlayer, 'play').returns('rock');
-            stub(paperPlayer, 'play').returns('paper');
-            stub(scissorsPlayer, 'play').returns('scissors');
-            stub(craftyPlayer, 'play').returns('crafty');
+            vi.spyOn(rockPlayer, 'play').mockReturnValue('rock');
+            vi.spyOn(paperPlayer, 'play').mockReturnValue('paper');
+            vi.spyOn(scissorsPlayer, 'play').mockReturnValue('scissors');
+            vi.spyOn(craftyPlayer, 'play').mockReturnValue('crafty');
 
             // games
             rock_vs_rock = new rockPaperScissors.Game(rockPlayer, rockPlayer);

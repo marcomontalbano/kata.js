@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import { describe, it, expect } from 'vitest';
 
-import HelloWorld from './HelloWorld';
+import HelloWorld from './HelloWorld'
 
 describe('HelloWorld', () => {
 
@@ -11,7 +11,7 @@ describe('HelloWorld', () => {
         }).to.not.throw();
     });
 
-    it('should greet() correcly.', () => {
+    it('should greet() correctly.', () => {
         // given
         const helloWorld = new HelloWorld();
 

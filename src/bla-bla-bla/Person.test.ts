@@ -1,4 +1,5 @@
-import { expect } from 'chai';
+import { describe, beforeEach, it, expect } from 'vitest';
+
 import { Person } from './Person';
 
 describe('Person', () => {

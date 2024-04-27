@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import { describe, beforeEach, it, expect } from 'vitest';
 
 import Primes from './Primes';
 
