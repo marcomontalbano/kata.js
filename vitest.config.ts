@@ -6,7 +6,7 @@ export default defineConfig({
     dir: './src/',
     coverage: {
       provider: 'istanbul',
-      reporter: ['text', 'json', 'html', 'lcov', 'text-lcov'],
+      reporter: ['text', 'json', 'html', 'lcov'],
     },
   },
 })

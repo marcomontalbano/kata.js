@@ -1,6 +1,4 @@
-import { it } from 'vitest'
-
-import { expect } from 'chai'
+import { it, expect } from 'vitest'
 
 import { helloWorld } from './typescript'
 

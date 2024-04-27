@@ -1,54 +1,52 @@
 {
-    "name": "kata.js",
-    "private": true,
-    "description": "A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.",
-    "author": {
-        "name": "Marco Montalbano",
-        "email": "me@marcomontalbano.com",
-        "url": "https://marcomontalbano.com"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/marcomontalbano/kata.js"
-    },
-    "keywords": [
-        "marcomontalbano",
-        "kata",
-        "tdd",
-        "test driven development",
-        "tests"
-    ],
-    "engines": {
-        "node": ">=20"
-    },
-    "scripts": {
-        "test": "eslint ./src/**/*.js && vitest run",
-        "watch": "chokidar ./src/**/*.[j,t]s -c 'npm test'",
-        "coverage": "vitest run --coverage",
-        "stryker": "stryker run",
-        "dep:major": "npx npm-check-updates --packageFile '**/package.json' -u",
-        "dep:minor": "npm run dep:major -t minor"
-    },
-    "devDependencies": {
-        "@stryker-mutator/core": "~8.2.6",
-        "@stryker-mutator/vitest-runner": "^8.2.6",
-        "@types/chai": "^4.3.14",
-        "@types/node": "^20.12.7",
-        "@vitest/coverage-istanbul": "^1.5.2",
-        "chai": "~5.1.0",
-        "chokidar-cli": "~3.0.0",
-        "eslint": "~9.1.1",
-        "sinon": "~17.0.1",
-        "stryker-cli": "~1.0.2",
-        "typescript": "^5.4.5",
-        "vitest": "^1.5.2"
-    },
-    "nyc": {
-        "reporter": [
-            "lcov",
-            "text",
-            "text-summary"
-        ]
-    }
+  "name": "kata.js",
+  "private": true,
+  "description": "A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.",
+  "type": "module",
+  "author": {
+    "name": "Marco Montalbano",
+    "email": "me@marcomontalbano.com",
+    "url": "https://marcomontalbano.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcomontalbano/kata.js"
+  },
+  "keywords": [
+    "marcomontalbano",
+    "kata",
+    "tdd",
+    "test driven development",
+    "tests"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "eslint ./src/**/*.js && vitest run",
+    "watch": "chokidar ./src/**/*.[j,t]s -c 'npm test'",
+    "coverage": "vitest run --coverage",
+    "stryker": "stryker run",
+    "dep:major": "npx npm-check-updates --packageFile '**/package.json' -u",
+    "dep:minor": "npm run dep:major -t minor"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "~8.2.6",
+    "@stryker-mutator/vitest-runner": "^8.2.6",
+    "@types/node": "^20.12.7",
+    "@vitest/coverage-istanbul": "^1.5.2",
+    "chokidar-cli": "~3.0.0",
+    "eslint": "~9.1.1",
+    "stryker-cli": "~1.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.2"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ]
+  }
 }
